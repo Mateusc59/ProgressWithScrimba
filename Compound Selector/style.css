@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+}
+
+h1, h2, p {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+}
+
+a {
+    color: #FFE600;
+}
+
+header,
+section {
+    padding: 50px;
+}
+
+header {
+    background: #FFE600;
+    color: #000;
+}
+
+.section-one, h2 {
+    background-color: black;
+    color: white;
+    font-size: 14px;
+}
+
+.section-one .btn{
+    background-color: yellow;
+    padding: 10px;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 10px;
+
+}
+
+.section-one .bigger{
+    font-weight: bold;
+}
+
+
+.section-two h2{
+    background-color: white;
+    color: black;
+    font-size: 14px;
+
+}
+
+.section-two .btn {
+    background-color: black;
+    padding: 10px;
+    color: yellow;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 10px;
+
+}
+
+.section-two .black-link{
+    color: black;
+}
+
+.section-two p{
+    color: grey;
+}
