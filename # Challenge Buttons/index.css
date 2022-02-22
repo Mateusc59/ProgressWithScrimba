@@ -37,6 +37,10 @@ h1 {
 h2 {
     font-size: 42px;
     margin-top: 0;
+    padding: 20px;
+    border-bottom:solid 1px;
+    border-top:solid 1px;
+    border-bottom-color: #C4C4C4;
 }
 
 h3 {
@@ -90,4 +94,23 @@ section {
 
 .btn-about:focus{
     background-color: green;
+}
+
+
+.accent-text{
+    color: #99D930;
+    font-weight: 900;
+    font-size: 80px;
+    }
+
+h2
+.accent-text{
+    font-size: 60px;
+    display: block;
+}
+
+.name,
+time{
+    color: #99D930;
+    font-weight: 900;
 }
