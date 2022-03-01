@@ -14,3 +14,10 @@
     - The 'event.target' has another property called 'value', so 'event.target.value' which in the case of our input box, gives us the value the user typed in!
     - Adding the method 'toLowerCase()' will lowercase your value!
 */
+
+const userInput = document.getElementById('usernameInput')
+
+userInput.addEventListener('keyup', function () {
+  let username = event.target.value.toLowerCase()
+  console.log(username)
+})
