@@ -28,6 +28,8 @@
 
 .carousel .carousel-item-visible {
     display: block;
+    animation: fadeVisibility 0.5s;
+
 }
 
 .carousel .carousel-item img {
@@ -42,6 +44,8 @@
     justify-content: space-between;
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
+
 }
 
 .carousel .carousel-actions button {
@@ -61,4 +65,18 @@
 
 .carousel .carousel-actions button#carousel-button-next {
     margin-right: 20px;
+}
+
+.carousel-item-hidden{
+  display: none;
+}
+
+
+@keyframes fadeVisibility{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
