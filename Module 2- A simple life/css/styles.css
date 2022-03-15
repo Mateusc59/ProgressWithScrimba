@@ -135,6 +135,8 @@ nav a {
     color: #707070;
     font-weight: 700;
     padding: .25em 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 nav a:hover,
