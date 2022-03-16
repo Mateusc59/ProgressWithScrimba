@@ -1,0 +1,126 @@
+body{
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+.bbq{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-image: url(images/dark-ribs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid green;
+    min-height: 10em;
+    text-align: center;
+}
+
+.flex{
+    border: 10px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content{
+    border: 3px solid orangered;
+    margin: 1em;
+    padding: 1em;
+}
+
+@media(min-width:700px){
+    .flex{
+        flex-direction: row;
+        min-height: 100vh;
+    }
+
+    .bbq{
+        width: 180%;
+        max-width: 70%;
+    }
+
+    .main-content{
+        margin: 9em 1em 3em 1em;
+    }
+
+}
+
+.content{
+    border: 2px solid yellow;
+    justify-content:space-between;
+    margin: 0em 3em 3em 3em;
+}
+
+.bbq .info{
+    color: #ff713B;
+    text-transform: uppercase;
+    border-top: 6px solid;
+    margin: 0 auto;
+    font-size: 0.5em;
+    font-weight: 900;
+}
+
+.tit{
+    color: #fff;
+    font-weight: 300
+}
+
+.strong{
+    font-weight: 900;
+}
+
+.subtitle{
+    color: #f18119;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.second-form{
+    border: 4px solid violet;
+    text-align: center
+}
+
+
+
+.second-title{
+    color: rgb(52,33.3,39.5);
+    margin-bottom: -1.1em;
+}
+
+.third-title{
+    color: #f18119;
+    text-transform: uppercase;
+}
+
+.paragraphe{
+    color: grey;
+}
+
+.first-name{
+    border: 2px solid grey;
+    border-radius: 0.2em;
+    padding: 0.3em;
+    display: inline-block;
+}
+
+.email{
+    border: 2px solid grey;
+    border-radius: 0.2em;
+    padding: 0.3em;
+    margin-top: 0.4em;
+    display: inline-block;
+}
+
+.btn-register{
+    color: white;
+    background-image: linear-gradient(to right, #ff713B , #ffa51d);
+    border: transparent;
+    border-radius: 0.3em;
+    padding: 0.3em;
+    width: 11em;
+    margin-top: 0.4em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
