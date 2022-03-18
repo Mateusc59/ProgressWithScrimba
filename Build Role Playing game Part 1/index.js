@@ -1,204 +1,83 @@
-html, body {
-  padding: 0;
-  margin: 0;
-  background: rgb(51, 43, 55);
-  background: radial - gradient(circle, rgba(51, 43, 55, 1) 0 %, rgba(51, 43, 55, 1) 100 %);
-  display: flex;
-  flex - direction: column;
-  align - items: center;
-  color: #fff;
-  font - family: 'MedievalSharp', cursive;
+/*
+CHALLENGE
+1. Strip out the hero and monster data (element id, name, avatar,
+health and dice score) and store them in variables
+
+2. Write a renderCharacter() function that accepts the 5 new variables
+as paramaters and renders out a character with this data
+
+3. Call renderCharacter() twice. Once with the hero variables and
+once with the monster variables to that both are rendered
+
+let HeroElementId = "hero"
+let HeroName = "wizard"
+let HeroAvatar = "images/wizard.png"
+let HeroHealth = 6
+let HeroDiceScore = 6
+
+let MonsterElementId = "monster"
+let MonsterName = "orc"
+let MonsterAvatar = "images/orc.png"
+let MonsterHealth = 10
+let MonsterDiceScore = 4
+
+function renderCharacter(elementid, name, avatar, health, dice) {
+  document.getElementById(elementid).innerHTML =
+    `<div class="character-card">
+        <h4 class="name"> ${name} </h4>
+        <img class="avatar" src="${avatar}"/>
+        <p class="health">health: <b> ${health} </b></p>
+        <div class="dice-container"><div class="dice"> ${dice} </div></div>
+    </div>`;
 }
 
-main {
-  display: flex;
-  flex - direction: column;
-  width: 100vw;
-  align - items: center;
-  margin - top: .5rem;
+console.log(renderCharacter(HeroElementId, HeroName, HeroAvatar, HeroHealth, HeroDiceScore))
+console.log(renderCharacter(MonsterElementId, MonsterName, MonsterAvatar, MonsterHealth, MonsterDiceScore))
+*/
+
+const hero = {
+  elementId: "hero",
+  name: "Wizard",
+  avatar: "images/wizard.png",
+  health: 60,
+  diceRoll: [3, 1, 4],
+  diceCount: 3
 }
 
-@media(min - width: 550px) {
-   main {
-    flex - direction: row;
-    margin: 6vh 5vw;
-    justify - content: center;
-    width: 86vw;
-    gap: 2rem;
+const monster = {
+  elementId: "monster",
+  name: "Orc",
+  avatar: "images/orc.png",
+  health: 10,
+  diceRoll: [2],
+  diceCount: 1
+}
+
+function renderCharacter(data) {
+  const { elementId, name, avatar, health, diceRoll, diceCount } = data;
+  let diceHtml = '';
+
+  // CHALLENGE
+  // Update this for loop so it uses a value from the
+  // new diceRoll array to render out the dice so the
+  // wizard's dice have values of 3, 1 and 4, and the
+  // orc's single dice has a value of 2.
+
+
+  for (let i = 0; i < diceRoll.length; i++) {
+    diceHtml += `<div class="dice">${diceRoll[i]}</div>`
   }
+
+  document.getElementById(elementId).innerHTML =
+    `<div class="character-card">
+        <h4 class="name"> ${name} </h4>
+        <img class="avatar" src="${avatar}" />
+        <div class="health">health: <b>${health}</b></div>
+        <div class="dice-container">
+            ${diceHtml}
+        </div>
+    </div>`;
 }
 
-.character - card {
-  height: 14rem;
-  margin - top: .5rem;
-  width: 94vw;
-  max - width: 230px;
-  padding: 1vh 1vw;
-  font - size: 1.6rem;
-  color: white;
-  border - radius: 14px;
-  position: relative;
-  background: #231d24;
-  text - align: center;
-  overflow: hidden;
-  border: 0.2rem solid #000721;
-  box - shadow: inset 0px 0px 6px 2px rgba(100, 100, 100, 0.2),
-    0px 0px 10px rgba(117, 182, 214, 0.2);
-}
-
-@media(min - width: 550px) {
-    .character - card {
-    border: 0.2rem solid #000721;
-    height: 26rem;
-    width: 37vw;
-  }
-}
-
-.name {
-  margin: 1vh 0;
-  width: 100 %;
-  letter - spacing: 0.08em;
-  font - size: 90 %;
-}
-
-@media(min - width: 550px) {
-    .name {
-    margin: 2vh 0;
-    font - size: 100 %;
-  }
-}
-
-.avatar {
-  width: 15vh;
-  border: 2px solid #000721;
-  max - width: 100 %;
-  opacity: 0.8;
-  border - radius: 10px;
-  background - color: rgba(0, 7, 33, 0.8);
-}
-
-@media(min - width: 550px) {
-    .avatar {
-    width: 25vh;
-  }
-}
-
-.health {
-  font - size: 1.1rem;
-  font - weight: normal;
-  width: 90 %;
-  text - align: left;
-  margin: 1vh 5 %;
-  color: #ccc;
-  letter - spacing: 0.03em
-}
-
-@media(min - width: 550px) {
-    .health {
-    margin: 2vh 5 %;
-  }
-}
-
-.health b {
-  font - weight: bold;
-  color: #fff;
-}
-
-.health - bar - outer {
-  background: #171217;
-  height: 1vh;
-  width: 90 %;
-  margin: 0 5 %;
-  border - radius: 2px;
-}
-
-.health - bar - outer.health - bar - inner {
-  background: #466d34;
-  height: 100 %;
-  border - radius: 2px;
-}
-
-.health - bar - outer.health - bar - inner.danger {
-  background: #d1435f;
-}
-
-.dice - container {
-  width: 100 %;
-  height: 20 %;
-  position: absolute;
-  bottom: 0;
-  left: 0px;
-  right: 0;
-  background: #000721;
-  display: flex;
-  justify - content: center;
-  align - items: center;
-  gap: .5rem;
-}
-
-@media(min - width: 550px) {
-    .dice - container {
-    height: 30 %;
-    border - bottom - left - radius: 3px;
-    border - bottom - right - radius: 3px;
-  }
-}
-
-.dice, .placeholder - dice{
-  height: 5.5vh;
-  width: 5.5vh;
-  background: #fff;
-  border - radius: 5px;
-  border: 1px solid #666;
-  color:#000721;
-  text - align: center;
-  line - height: 6vh;
-}
-
-@media(min - width: 550px) {
-.dice - container.dice, .dice - container.placeholder - dice{
-    height: 10vh;
-    width: 10vh;
-    line - height: 10.5vh;
-  }
-}
-
-.dice - container.placeholder - dice{
-  background - color: transparent;
-}
-
-button {
-  margin - top: .5rem;
-  font - family: 'MedievalSharp', cursive;
-  background - color: #fcc02a;
-  border: 2px solid #963404;
-  outline: none;
-  padding - left: 5vw;
-  padding - right: 5vw;
-  text - align: center;
-  text - decoration: none;
-  display: inline - block;
-  font - size: 1.5rem;
-  border - radius: 6px;
-  cursor: pointer;
-  color:#963404;
-  height: 9vh;
-  box - shadow: 0px 6px 10px - 4px rgba(0, 0, 0, 0.4);
-}
-
-@media(min - width: 550px) {
-    button {
-    margin - top: 0;
-  }
-}
-
-button:focus { outline: 0 }
-
-.end - game{
-  margin - top: 25 %;
-  text - align: center;
-}
-
-.end - emoji{
-  font - size: 80px;
-}
+renderCharacter(hero);
+renderCharacter(monster);
